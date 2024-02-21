@@ -2,7 +2,7 @@ const ProductDetails = () => {
   return (
     <section className="col-span-12 md:col-span-4">
       <div className="flex flex-col max-w-3xl space-y-4">
-        <h2 className="text-xl font-semibold">Product Details</h2>
+        <h2 className="text-2xl text-gray-700 font-bold">Product Details</h2>
         <section>
           <img
             className="flex-shrink-0 object-cover w-full h-full rounded outline-none "
