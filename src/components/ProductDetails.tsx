@@ -1,4 +1,19 @@
-const ProductDetails = () => {
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
+
+const getSingleProduct = async ({ queryKey }) => {
+  const response = await axios.get(
+    `https://dummyjson.com/${queryKey[0]}/${queryKey[1]}`
+  );
+  return response.data;
+};
+
+const ProductDetails = ({ productId }) => {
+  const { data: product } = useQuery({
+    queryKey: ["products", productId],
+    queryFn: getSingleProduct,
+  });
+
   return (
     <section className="col-span-12 md:col-span-4">
       <div className="flex flex-col max-w-3xl space-y-4">
@@ -6,19 +21,22 @@ const ProductDetails = () => {
         <section>
           <img
             className="flex-shrink-0 object-cover w-full h-full rounded outline-none "
-            src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-1.2.1&amp;ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80"
-            alt="Polaroid camera"
+            src={product?.thumbnail}
+            alt={product?.title}
           />
-
-          <h2 className="mt-6">Title</h2>
-          <div className="flex justify-between">
-            <div>
-              <small>Brand</small>
-              <p>rating</p>
-            </div>
-            Price
+          <div className="flex gap-2 mt-6 mb-2">
+            <small className="bg-blue-300 px-2 py-1 rounded-sm">
+              {product?.brand}
+            </small>
+            <small className="bg-red-300 px-2 py-1 rounded-sm">
+              {product?.category}
+            </small>
           </div>
-          <p>Description</p>
+          <h2 className=" font-semibold my-2 text-2xl">{product?.title}</h2>
+          <div className="font-semibold text-red-500 font-xl">
+            $ {product?.price}
+          </div>
+          <p>{product?.description}</p>
           <button
             type="button"
             className="bg-red-600 text-white hover:bg-red-400 transition-all duration-300 px-8 py-3 font-semibold rounded mt-8 w-full"

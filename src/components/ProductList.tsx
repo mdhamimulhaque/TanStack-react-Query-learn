@@ -3,11 +3,11 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
 const getProducts = async ({ queryKey }) => {
-  const response = await axios.get(`https://dummyjson.com/${queryKey[0]}`);
+  const response = await axios.get(`https://dummyjson.com/products/`);
   return response?.data;
 };
 
-const ProductList = () => {
+const ProductList = ({ onProductId }) => {
   const {
     data: products,
     error,
@@ -36,7 +36,7 @@ const ProductList = () => {
                   <div className="aspect-w-1 aspect-h-1 w-full h-full overflow-hidden filter group-hover:brightness-110">
                     <img
                       src={product?.thumbnail}
-                      alt=""
+                      alt={product?.title}
                       className="w-full max-h-36 object-cover object-center"
                     />
                   </div>
@@ -49,12 +49,13 @@ const ProductList = () => {
 
                     {/* :::price */}
                     <p className="text-lg text-gray-700 font-semibold">
-                      {product?.price}
+                      {product?.price}$
                     </p>
                   </div>
                   <button
                     type="button"
                     className="bg-blue-600 text-white hover:bg-blue-400 transition-all duration-300 px-8 py-3 font-semibold rounded "
+                    onClick={() => onProductId(product?.id)}
                   >
                     Show Details
                   </button>
