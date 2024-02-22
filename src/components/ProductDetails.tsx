@@ -37,7 +37,7 @@ const ProductDetails = ({ productId }) => {
   if (isLoading) return <div>Fetching Product Details...</div>;
 
   return (
-    <section className="col-span-12 md:col-span-4">
+    <section className="col-span-12 md:col-span-3">
       <div className="flex flex-col max-w-3xl space-y-4">
         <h2 className="text-2xl text-gray-700 font-bold">Product Details</h2>
         {productId ? (

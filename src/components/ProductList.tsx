@@ -21,7 +21,7 @@ const ProductList = ({ onProductId }) => {
   if (error) return <div>An Error Occured: {error.message}</div>;
 
   return (
-    <div className="col-span-12 md:col-span-8">
+    <div className="col-span-12 md:col-span-6">
       <div className="mx-auto max-w-2xl lg:max-w-none">
         {/* :CATEGORY TITLE */}
         <h2 className="text-2xl text-gray-700 font-bold">Products List</h2>
