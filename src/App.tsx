@@ -18,7 +18,7 @@ const App = () => {
       <section className="grid grid-cols-12 gap-3 mx-2  ">
         <AddProduct />
         <ProductList onProductId={handleProductId} />
-        <ProductDetails productId={productId} />
+        <ProductDetails productId={productId} onSetProductId={setProductId} />
       </section>
     </main>
   );

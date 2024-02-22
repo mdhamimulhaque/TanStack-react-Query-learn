@@ -10,7 +10,7 @@ const getSingleProduct = async ({ queryKey }) => {
   }
 };
 
-const ProductDetails = ({ productId }) => {
+const ProductDetails = ({ productId, onSetProductId }) => {
   const queryClient = useQueryClient();
 
   const { data: product, isLoading } = useQuery({
@@ -27,6 +27,7 @@ const ProductDetails = ({ productId }) => {
     },
     onSuccess: () => {
       queryClient.invalidateQueries(["products", productId]);
+      onSetProductId(null);
     },
   });
 
@@ -40,7 +41,7 @@ const ProductDetails = ({ productId }) => {
     <section className="col-span-12 md:col-span-3">
       <div className="flex flex-col max-w-3xl space-y-4">
         <h2 className="text-2xl text-gray-700 font-bold">Product Details</h2>
-        {product?.id && (
+        {product?.id ? (
           <section>
             <img
               className="flex-shrink-0 object-cover w-full h-full rounded outline-none "
@@ -61,6 +62,8 @@ const ProductDetails = ({ productId }) => {
               Delete Product
             </button>
           </section>
+        ) : (
+          <h2>No Product added yet</h2>
         )}
       </div>
     </section>
