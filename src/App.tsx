@@ -3,7 +3,7 @@ import ProductDetails from "./components/ProductDetails";
 import ProductList from "./components/ProductList";
 
 const App = () => {
-  const [productId, setProductId] = useState(1);
+  const [productId, setProductId] = useState(null);
 
   const handleProductId = (productId) => {
     setProductId(productId);

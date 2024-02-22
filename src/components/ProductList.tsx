@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
 const getProducts = async ({ queryKey }) => {
-  const response = await axios.get(`https://dummyjson.com/products/`);
+  const response = await axios.get(`http://localhost:8000/products`);
   return response?.data;
 };
 
@@ -17,6 +17,9 @@ const ProductList = ({ onProductId }) => {
     queryFn: getProducts,
   });
 
+  if (isLoading) return <div>Fetching Product Details...</div>;
+  if (error) return <div>An Error Occured: {error.message}</div>;
+
   return (
     <div className="col-span-12 md:col-span-8">
       <div className="mx-auto max-w-2xl lg:max-w-none">
@@ -26,7 +29,7 @@ const ProductList = ({ onProductId }) => {
         {/* :PRODUCT LIST */}
         <div className="mt-6">
           <ul className="grid grid-cols-12 gap-3">
-            {products?.products?.map((product) => (
+            {products?.map((product) => (
               <li
                 key={product?.id}
                 className="col-span-full bg-white md:col-span-6 lg:col-span-4 group shadow-sm rounded border border-gray-50 hover:shadow-md"
