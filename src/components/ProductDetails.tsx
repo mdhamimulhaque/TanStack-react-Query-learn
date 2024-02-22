@@ -1,4 +1,4 @@
-import { useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
 
 const getSingleProduct = async ({ queryKey }) => {
@@ -11,7 +11,7 @@ const getSingleProduct = async ({ queryKey }) => {
 };
 
 const ProductDetails = ({ productId }) => {
-  // const queryClient = useQueryClient();
+  const queryClient = useQueryClient();
 
   const { data: product, isLoading } = useQuery({
     queryKey: ["products", productId],
@@ -19,19 +19,19 @@ const ProductDetails = ({ productId }) => {
   });
 
   // ===> delete product
-  // const mutation = useMutation({
-  //   mutationFn: (productId) => {
-  //     if (confirm("Are you sure you want to delete Product?")) {
-  //       axios.delete(`http://localhost:8000/products/${productId}`);
-  //     }
-  //   },
-  //   onSuccess: () => {
-  //     queryClient.invalidateQueries(["products"]);
-  //   },
-  // });
+  const mutation = useMutation({
+    mutationFn: (productId) => {
+      if (confirm("Are you sure you want to delete Product?")) {
+        axios.delete(`http://localhost:8000/products/${productId}`);
+      }
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries(["products"]);
+    },
+  });
 
-  function handleDeleteProduct() {
-    // mutation.mutate(product?.id);
+  function handleDeleteProduct(id) {
+    mutation.mutate(id);
   }
 
   if (isLoading) return <div>Fetching Product Details...</div>;
@@ -47,21 +47,14 @@ const ProductDetails = ({ productId }) => {
               src={product?.thumbnail}
               alt={product?.title}
             />
-            {/* <div className="flex gap-2 mt-6 mb-2">
-              <small className="bg-blue-300 px-2 py-1 rounded-sm">
-                {product?.brand}
-              </small>
-              <small className="bg-red-300 px-2 py-1 rounded-sm">
-                {product?.category}
-              </small>
-            </div> */}
+
             <h2 className=" font-semibold my-2 text-2xl">{product?.title}</h2>
             <div className="font-semibold text-red-500 font-xl">
               $ {product?.price}
             </div>
             <p>{product?.description}</p>
             <button
-              onClick={handleDeleteProduct}
+              onClick={() => handleDeleteProduct(product?.id)}
               type="button"
               className="bg-red-600 text-white hover:bg-red-400 transition-all duration-300 px-8 py-3 font-semibold rounded mt-8 w-full"
             >
