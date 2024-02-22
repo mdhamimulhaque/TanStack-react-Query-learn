@@ -22,11 +22,11 @@ const ProductDetails = ({ productId }) => {
   const mutation = useMutation({
     mutationFn: (productId) => {
       if (confirm("Are you sure you want to delete Product?")) {
-        axios.delete(`http://localhost:8000/products/${productId}`);
+        return axios.delete(`http://localhost:8000/products/${productId}`);
       }
     },
     onSuccess: () => {
-      queryClient.invalidateQueries(["products"]);
+      queryClient.invalidateQueries(["products", productId]);
     },
   });
 
@@ -40,7 +40,7 @@ const ProductDetails = ({ productId }) => {
     <section className="col-span-12 md:col-span-3">
       <div className="flex flex-col max-w-3xl space-y-4">
         <h2 className="text-2xl text-gray-700 font-bold">Product Details</h2>
-        {productId ? (
+        {product?.id && (
           <section>
             <img
               className="flex-shrink-0 object-cover w-full h-full rounded outline-none "
@@ -61,8 +61,6 @@ const ProductDetails = ({ productId }) => {
               Delete Product
             </button>
           </section>
-        ) : (
-          "NO Product Selected Yet"
         )}
       </div>
     </section>

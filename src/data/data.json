@@ -9,100 +9,12 @@
       "thumbnail": "https://cdn.dummyjson.com/product-images/2/thumbnail.jpg"
     },
     {
-      "id": "3",
-      "title": "Samsung Universe 9",
-      "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
-      "price": 1249,
-      "rating": 4.09,
-      "thumbnail": "https://cdn.dummyjson.com/product-images/3/thumbnail.jpg"
-    },
-    {
       "id": "4",
       "title": "OPPOF19",
       "description": "OPPO F19 is officially announced on April 2021.",
       "price": 280,
       "rating": 4.3,
       "thumbnail": "https://cdn.dummyjson.com/product-images/4/thumbnail.jpg"
-    },
-    {
-      "id": "5",
-      "title": "Huawei P30",
-      "description": "Huawei’s re-badged P30 Pro New Edition was officially unveiled yesterday in Germany and now the device has made its way to the UK.",
-      "price": 499,
-      "rating": 4.09,
-      "thumbnail": "https://cdn.dummyjson.com/product-images/5/thumbnail.jpg"
-    },
-    {
-      "id": "6",
-      "title": "MacBook Pro",
-      "description": "MacBook Pro 2021 with mini-LED display may launch between September, November",
-      "price": 1749,
-      "rating": 4.57,
-      "thumbnail": "https://cdn.dummyjson.com/product-images/6/thumbnail.png"
-    },
-    {
-      "id": "7",
-      "title": "Samsung Galaxy Book",
-      "description": "Samsung Galaxy Book S (2020) Laptop With Intel Lakefield Chip, 8GB of RAM Launched",
-      "price": 1499,
-      "rating": 4.25,
-      "thumbnail": "https://cdn.dummyjson.com/product-images/7/thumbnail.jpg"
-    },
-    {
-      "id": "8",
-      "title": "Microsoft Surface Laptop 4",
-      "description": "Style and speed. Stand out on HD video calls backed by Studio Mics. Capture ideas on the vibrant touchscreen.",
-      "price": 1499,
-      "rating": 4.43,
-      "thumbnail": "https://cdn.dummyjson.com/product-images/8/thumbnail.jpg"
-    },
-    {
-      "id": "9",
-      "title": "Infinix INBOOK",
-      "description": "Infinix Inbook X1 Ci3 10th 8GB 256GB 14 Win10 Grey – 1 Year Warranty",
-      "price": 1099,
-      "rating": 4.54,
-      "thumbnail": "https://cdn.dummyjson.com/product-images/9/thumbnail.jpg"
-    },
-    {
-      "id": "10",
-      "title": "HP Pavilion 15-DK1056WM",
-      "description": "HP Pavilion 15-DK1056WM Gaming Laptop 10th Gen Core i5, 8GB, 256GB SSD, GTX 1650 4GB, Windows 10",
-      "price": 1099,
-      "rating": 4.43,
-      "thumbnail": "https://cdn.dummyjson.com/product-images/10/thumbnail.jpeg"
-    },
-    {
-      "id": "11",
-      "title": "perfume Oil",
-      "description": "Mega Discount, Impression of Acqua Di Gio by GiorgioArmani concentrated attar perfume Oil",
-      "price": 13,
-      "rating": 4.26,
-      "thumbnail": "https://cdn.dummyjson.com/product-images/11/thumbnail.jpg"
-    },
-    {
-      "id": "12",
-      "title": "Brown Perfume",
-      "description": "Royal_Mirage Sport Brown Perfume for Men & Women - 120ml",
-      "price": 40,
-      "rating": 4,
-      "thumbnail": "https://cdn.dummyjson.com/product-images/12/thumbnail.jpg"
-    },
-    {
-      "id": "13",
-      "title": "Fog Scent Xpressio Perfume",
-      "description": "Product details of Best Fog Scent Xpressio Perfume 100ml For Men cool long lasting perfumes for Men",
-      "price": 13,
-      "rating": 4.59,
-      "thumbnail": "https://cdn.dummyjson.com/product-images/13/thumbnail.webp"
-    },
-    {
-      "id": "14",
-      "title": "Non-Alcoholic Concentrated Perfume Oil",
-      "description": "Original Al Munakh® by Mahal Al Musk | Our Impression of Climate | 6ml Non-Alcoholic Concentrated Perfume Oil",
-      "price": 120,
-      "rating": 4.21,
-      "thumbnail": "https://cdn.dummyjson.com/product-images/14/thumbnail.jpg"
     },
     {
       "id": "15",
@@ -225,14 +137,6 @@
       "thumbnail": "https://cdn.dummyjson.com/product-images/29/thumbnail.webp"
     },
     {
-      "id": "30",
-      "title": "Key Holder",
-      "description": "Attractive DesignMetallic materialFour key hooksReliable & DurablePremium Quality",
-      "price": 30,
-      "rating": 4.92,
-      "thumbnail": "https://cdn.dummyjson.com/product-images/30/thumbnail.jpg"
-    },
-    {
       "id": "13dfb563-bc9a-4027-8100-fea2348e51bd",
       "title": "Bed",
       "description": "A superb Cozy Bed",
@@ -247,22 +151,6 @@
       "price": 1000,
       "rating": 5,
       "thumbnail": "https://cdn.dummyjson.com/product-images/32/thumbnail.jpg"
-    },
-    {
-      "id": "3dbb3096-f2ef-481wsrrr5-8653-d6c4a2965dbe",
-      "title": "Bed",
-      "description": "Cozy Bed",
-      "price": 1000,
-      "rating": 5,
-      "thumbnail": "https://cdn.dummyjson.com/product-images/32/thumbnail.jpg"
-    },
-    {
-      "id": "52b12e65-a829-4d3d-a957-95559ed77a67",
-      "title": "bb",
-      "description": "bb",
-      "price": 1,
-      "rating": 5,
-      "thumbnail": "dsg"
     }
   ]
 }
